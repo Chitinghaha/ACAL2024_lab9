@@ -167,7 +167,6 @@ class topTest(dut:top) extends PeekPokeTester(dut){
     println(s"[Mem Write Request Count               ] ${"%8d".format(Store_cnt)}")
     println(s"[Mem Read Bytes Count                  ] ${"%8d".format(Load_byte_cnt)}")
     println(s"[Mem Write Bytes Count                 ] ${"%8d".format(Store_byte_cnt)}")
-    println(s"[Committed Instruction Count           ] ${"%8d".format(Inst_Count - 4)}")
     println("")
     println("===============================")
     println("Performance Analysis")

@@ -1,0 +1,10 @@
+## RV32 Emulator Testing Assembly Code for ANDN function
+
+main:
+  li x2, 0xFFFF  
+  zext.h x1, x2        
+
+  li x3, 0xFFFF8000    
+  zext.h x4, x3        
+
+  hcf                   

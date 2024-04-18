@@ -1,0 +1,373 @@
+
+./out/obj/rv32ui_FullTest-mergesort:     file format elf32-littleriscv
+./out/obj/rv32ui_FullTest-mergesort
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+0x70000003 off    0x000020c8 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x0000002e memsz 0x00000000 flags r--
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x000002bc memsz 0x000002bc flags r-x
+    LOAD off    0x00002000 vaddr 0x00008000 paddr 0x00008000 align 2**12
+         filesz 0x000000c8 memsz 0x000000c8 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000002bc  00000000  00000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000080  00008000  00008000  00002000  2**4
+                  CONTENTS, ALLOC, LOAD, DATA
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00008000 l    d  .data	00000000 .data
+00000004 l       .text	00000000 reset_vector
+000000a0 l       .text	00000000 main
+00008000 l       .data	00000000 test1
+0000806c l       .data	00000000 TEST1_SIZE
+0000010c l       .text	00000000 mergesort
+00000178 l       .text	00000000 mergesort_ret
+0000017c l       .text	00000000 merge
+000001bc l       .text	00000000 for_loop_1_end
+00000198 l       .text	00000000 for_loop_1
+000001e8 l       .text	00000000 while_loop_1
+00000234 l       .text	00000000 while_loop_1_end
+00000224 l       .text	00000000 else_1
+00000214 l       .text	00000000 if_1
+00000230 l       .text	00000000 if_1_end
+0000025c l       .text	00000000 while_loop_2_end
+00000238 l       .text	00000000 while_loop_2
+00000284 l       .text	00000000 while_loop_3_end
+00000260 l       .text	00000000 while_loop_3
+00008070 l       .data	00000000 data_end
+00008000 g       .data	00000000 begin_signature
+00000000 g       .text	00000000 _start
+
+
+Contents of section .text:
+ 0000 6f004000 93000000 13010000 93010000  o.@.............
+ 0010 13020000 93020000 13030000 93030000  ................
+ 0020 13040000 93040000 13050000 93050000  ................
+ 0030 13060000 93060000 13070000 93070000  ................
+ 0040 13080000 93080000 13090000 93090000  ................
+ 0050 130a0000 930a0000 130b0000 930b0000  ................
+ 0060 130c0000 930c0000 130d0000 930d0000  ................
+ 0070 130e0000 930e0000 130f0000 930f0000  ................
+ 0080 93010000 13051000 1315f501 634a0500  ............cJ..
+ 0090 13000000 93011000 9308d005 13050000  ................
+ 00a0 130181ff 23228100 23209100 17840000  ....#"..# ......
+ 00b0 130444f5 97840000 938484fb 13050400  ..D.............
+ 00c0 93050000 03a60400 1306f6ff 1301c1ff  ................
+ 00d0 23201100 ef008003 83200100 13014100  # ....... ....A.
+ 00e0 03244100 83240100 13018100 9308d005  .$A..$..........
+ 00f0 13050000 13000000 13000000 13000000  ................
+ 0100 13000000 13000000 73000000 63d6c506  ........s...c...
+ 0110 130141ff 23248100 23229100 23202101  ..A.#$..#"..# !.
+ 0120 93840500 13090600 3384c500 13541440  ........3....T.@
+ 0130 1301c1ff 23201100 93850400 13060400  ....# ..........
+ 0140 eff0dffc 93051400 13060900 eff01ffc  ................
+ 0150 93850400 13060400 93060900 ef000002  ................
+ 0160 83200100 13014100 03248100 83244100  . ....A..$...$A.
+ 0170 03290100 1301c100 67800000 b382b640  .)......g......@
+ 0180 93821200 13932200 33016140 13030100  ......".3.a@....
+ 0190 93030000 63d45302 338eb300 131e2e00  ....c.S.3.......
+ 01a0 330eae00 832e0e00 139e2300 330e6e00  3.........#.3.n.
+ 01b0 2320de01 93831300 e3c053fe 1301c1fe  # ........S.....
+ 01c0 23208100 23229100 23242101 23263101  # ..#"..#$!.#&1.
+ 01d0 23284101 13040000 b304b640 13891400  #(A........@....
+ 01e0 b389b640 138a0500 63c68404 63c42905  ...@....c...c.).
+ 01f0 93132400 b3836300 03ae0300 93132900  ..$...c.......).
+ 0200 b3836300 83ae0300 93132a00 b383a300  ..c.......*.....
+ 0210 63cace01 23a0c301 130a1a00 13041400  c...#...........
+ 0220 6f000001 23a0d301 130a1a00 13091900  o...#...........
+ 0230 6ff09ffb 63c48402 93132400 b3836300  o...c.....$...c.
+ 0240 03ae0300 93132a00 b383a300 23a0c301  ......*.....#...
+ 0250 130a1a00 13041400 e3d084fe 63c42903  ............c.).
+ 0260 93132900 b3836300 03ae0300 93132a00  ..)...c.......*.
+ 0270 b383a300 23a0c301 130a1a00 13091900  ....#...........
+ 0280 e3d029ff 03240100 83244100 03298100  ..)..$...$A..)..
+ 0290 8329c100 032a0101 13014101 13932200  .)...*....A...".
+ 02a0 33016100 67800000 13000000 13000000  3.a.g...........
+ 02b0 13000000 13000000 13000000           ............    
+Contents of section .data:
+ 8000 9c010000 26feffff bb010000 ab000000  ....&...........
+ 8010 e9ffffff f7000000 dd000000 07000000  ................
+ 8020 28000000 dd000000 a6ffffff 3d000000  (...........=...
+ 8030 f7ffffff 31000000 b0ffffff b0ffffff  ....1...........
+ 8040 dd000000 85feffff 5fffffff 73feffff  ........_...s...
+ 8050 53ffffff 14010000 3bffffff dd000000  S.......;.......
+ 8060 f4ffffff 6fffffff 65000000 1b000000  ....o...e.......
+ 8070 00000000 00000000 00000000 00000000  ................
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	0040006f          	j	4 <reset_vector>
+
+00000004 <reset_vector>:
+   4:	00000093          	li	ra,0
+   8:	00000113          	li	sp,0
+   c:	00000193          	li	gp,0
+  10:	00000213          	li	tp,0
+  14:	00000293          	li	t0,0
+  18:	00000313          	li	t1,0
+  1c:	00000393          	li	t2,0
+  20:	00000413          	li	s0,0
+  24:	00000493          	li	s1,0
+  28:	00000513          	li	a0,0
+  2c:	00000593          	li	a1,0
+  30:	00000613          	li	a2,0
+  34:	00000693          	li	a3,0
+  38:	00000713          	li	a4,0
+  3c:	00000793          	li	a5,0
+  40:	00000813          	li	a6,0
+  44:	00000893          	li	a7,0
+  48:	00000913          	li	s2,0
+  4c:	00000993          	li	s3,0
+  50:	00000a13          	li	s4,0
+  54:	00000a93          	li	s5,0
+  58:	00000b13          	li	s6,0
+  5c:	00000b93          	li	s7,0
+  60:	00000c13          	li	s8,0
+  64:	00000c93          	li	s9,0
+  68:	00000d13          	li	s10,0
+  6c:	00000d93          	li	s11,0
+  70:	00000e13          	li	t3,0
+  74:	00000e93          	li	t4,0
+  78:	00000f13          	li	t5,0
+  7c:	00000f93          	li	t6,0
+  80:	00000193          	li	gp,0
+  84:	00100513          	li	a0,1
+  88:	01f51513          	slli	a0,a0,0x1f
+  8c:	00054a63          	bltz	a0,a0 <main>
+  90:	00000013          	nop
+  94:	00100193          	li	gp,1
+  98:	05d00893          	li	a7,93
+  9c:	00000513          	li	a0,0
+
+000000a0 <main>:
+  a0:	ff810113          	addi	sp,sp,-8
+  a4:	00812223          	sw	s0,4(sp)
+  a8:	00912023          	sw	s1,0(sp)
+  ac:	00008417          	auipc	s0,0x8
+  b0:	f5440413          	addi	s0,s0,-172 # 8000 <begin_signature>
+  b4:	00008497          	auipc	s1,0x8
+  b8:	fb848493          	addi	s1,s1,-72 # 806c <TEST1_SIZE>
+  bc:	00040513          	mv	a0,s0
+  c0:	00000593          	li	a1,0
+  c4:	0004a603          	lw	a2,0(s1)
+  c8:	fff60613          	addi	a2,a2,-1
+  cc:	ffc10113          	addi	sp,sp,-4
+  d0:	00112023          	sw	ra,0(sp)
+  d4:	038000ef          	jal	ra,10c <mergesort>
+  d8:	00012083          	lw	ra,0(sp)
+  dc:	00410113          	addi	sp,sp,4
+  e0:	00412403          	lw	s0,4(sp)
+  e4:	00012483          	lw	s1,0(sp)
+  e8:	00810113          	addi	sp,sp,8
+  ec:	05d00893          	li	a7,93
+  f0:	00000513          	li	a0,0
+  f4:	00000013          	nop
+  f8:	00000013          	nop
+  fc:	00000013          	nop
+ 100:	00000013          	nop
+ 104:	00000013          	nop
+ 108:	00000073          	ecall
+
+0000010c <mergesort>:
+ 10c:	06c5d663          	bge	a1,a2,178 <mergesort_ret>
+ 110:	ff410113          	addi	sp,sp,-12
+ 114:	00812423          	sw	s0,8(sp)
+ 118:	00912223          	sw	s1,4(sp)
+ 11c:	01212023          	sw	s2,0(sp)
+ 120:	00058493          	mv	s1,a1
+ 124:	00060913          	mv	s2,a2
+ 128:	00c58433          	add	s0,a1,a2
+ 12c:	40145413          	srai	s0,s0,0x1
+ 130:	ffc10113          	addi	sp,sp,-4
+ 134:	00112023          	sw	ra,0(sp)
+ 138:	00048593          	mv	a1,s1
+ 13c:	00040613          	mv	a2,s0
+ 140:	fcdff0ef          	jal	ra,10c <mergesort>
+ 144:	00140593          	addi	a1,s0,1
+ 148:	00090613          	mv	a2,s2
+ 14c:	fc1ff0ef          	jal	ra,10c <mergesort>
+ 150:	00048593          	mv	a1,s1
+ 154:	00040613          	mv	a2,s0
+ 158:	00090693          	mv	a3,s2
+ 15c:	020000ef          	jal	ra,17c <merge>
+ 160:	00012083          	lw	ra,0(sp)
+ 164:	00410113          	addi	sp,sp,4
+ 168:	00812403          	lw	s0,8(sp)
+ 16c:	00412483          	lw	s1,4(sp)
+ 170:	00012903          	lw	s2,0(sp)
+ 174:	00c10113          	addi	sp,sp,12
+
+00000178 <mergesort_ret>:
+ 178:	00008067          	ret
+
+0000017c <merge>:
+ 17c:	40b682b3          	sub	t0,a3,a1
+ 180:	00128293          	addi	t0,t0,1
+ 184:	00229313          	slli	t1,t0,0x2
+ 188:	40610133          	sub	sp,sp,t1
+ 18c:	00010313          	mv	t1,sp
+ 190:	00000393          	li	t2,0
+ 194:	0253d463          	bge	t2,t0,1bc <for_loop_1_end>
+
+00000198 <for_loop_1>:
+ 198:	00b38e33          	add	t3,t2,a1
+ 19c:	002e1e13          	slli	t3,t3,0x2
+ 1a0:	00ae0e33          	add	t3,t3,a0
+ 1a4:	000e2e83          	lw	t4,0(t3)
+ 1a8:	00239e13          	slli	t3,t2,0x2
+ 1ac:	006e0e33          	add	t3,t3,t1
+ 1b0:	01de2023          	sw	t4,0(t3)
+ 1b4:	00138393          	addi	t2,t2,1
+ 1b8:	fe53c0e3          	blt	t2,t0,198 <for_loop_1>
+
+000001bc <for_loop_1_end>:
+ 1bc:	fec10113          	addi	sp,sp,-20
+ 1c0:	00812023          	sw	s0,0(sp)
+ 1c4:	00912223          	sw	s1,4(sp)
+ 1c8:	01212423          	sw	s2,8(sp)
+ 1cc:	01312623          	sw	s3,12(sp)
+ 1d0:	01412823          	sw	s4,16(sp)
+ 1d4:	00000413          	li	s0,0
+ 1d8:	40b604b3          	sub	s1,a2,a1
+ 1dc:	00148913          	addi	s2,s1,1
+ 1e0:	40b689b3          	sub	s3,a3,a1
+ 1e4:	00058a13          	mv	s4,a1
+
+000001e8 <while_loop_1>:
+ 1e8:	0484c663          	blt	s1,s0,234 <while_loop_1_end>
+ 1ec:	0529c463          	blt	s3,s2,234 <while_loop_1_end>
+ 1f0:	00241393          	slli	t2,s0,0x2
+ 1f4:	006383b3          	add	t2,t2,t1
+ 1f8:	0003ae03          	lw	t3,0(t2)
+ 1fc:	00291393          	slli	t2,s2,0x2
+ 200:	006383b3          	add	t2,t2,t1
+ 204:	0003ae83          	lw	t4,0(t2)
+ 208:	002a1393          	slli	t2,s4,0x2
+ 20c:	00a383b3          	add	t2,t2,a0
+ 210:	01ceca63          	blt	t4,t3,224 <else_1>
+
+00000214 <if_1>:
+ 214:	01c3a023          	sw	t3,0(t2)
+ 218:	001a0a13          	addi	s4,s4,1
+ 21c:	00140413          	addi	s0,s0,1
+ 220:	0100006f          	j	230 <if_1_end>
+
+00000224 <else_1>:
+ 224:	01d3a023          	sw	t4,0(t2)
+ 228:	001a0a13          	addi	s4,s4,1
+ 22c:	00190913          	addi	s2,s2,1
+
+00000230 <if_1_end>:
+ 230:	fb9ff06f          	j	1e8 <while_loop_1>
+
+00000234 <while_loop_1_end>:
+ 234:	0284c463          	blt	s1,s0,25c <while_loop_2_end>
+
+00000238 <while_loop_2>:
+ 238:	00241393          	slli	t2,s0,0x2
+ 23c:	006383b3          	add	t2,t2,t1
+ 240:	0003ae03          	lw	t3,0(t2)
+ 244:	002a1393          	slli	t2,s4,0x2
+ 248:	00a383b3          	add	t2,t2,a0
+ 24c:	01c3a023          	sw	t3,0(t2)
+ 250:	001a0a13          	addi	s4,s4,1
+ 254:	00140413          	addi	s0,s0,1
+ 258:	fe84d0e3          	bge	s1,s0,238 <while_loop_2>
+
+0000025c <while_loop_2_end>:
+ 25c:	0329c463          	blt	s3,s2,284 <while_loop_3_end>
+
+00000260 <while_loop_3>:
+ 260:	00291393          	slli	t2,s2,0x2
+ 264:	006383b3          	add	t2,t2,t1
+ 268:	0003ae03          	lw	t3,0(t2)
+ 26c:	002a1393          	slli	t2,s4,0x2
+ 270:	00a383b3          	add	t2,t2,a0
+ 274:	01c3a023          	sw	t3,0(t2)
+ 278:	001a0a13          	addi	s4,s4,1
+ 27c:	00190913          	addi	s2,s2,1
+ 280:	ff29d0e3          	bge	s3,s2,260 <while_loop_3>
+
+00000284 <while_loop_3_end>:
+ 284:	00012403          	lw	s0,0(sp)
+ 288:	00412483          	lw	s1,4(sp)
+ 28c:	00812903          	lw	s2,8(sp)
+ 290:	00c12983          	lw	s3,12(sp)
+ 294:	01012a03          	lw	s4,16(sp)
+ 298:	01410113          	addi	sp,sp,20
+ 29c:	00229313          	slli	t1,t0,0x2
+ 2a0:	00610133          	add	sp,sp,t1
+ 2a4:	00008067          	ret
+ 2a8:	00000013          	nop
+ 2ac:	00000013          	nop
+ 2b0:	00000013          	nop
+ 2b4:	00000013          	nop
+ 2b8:	00000013          	nop
+
+Disassembly of section .data:
+
+00008000 <begin_signature>:
+    8000:	019c                	.2byte	0x19c
+    8002:	0000                	.2byte	0x0
+    8004:	fe26                	.2byte	0xfe26
+    8006:	ffff                	.2byte	0xffff
+    8008:	000001bb          	.4byte	0x1bb
+    800c:	000000ab          	.4byte	0xab
+    8010:	ffe9                	.2byte	0xffe9
+    8012:	ffff                	.2byte	0xffff
+    8014:	000000f7          	.4byte	0xf7
+    8018:	00dd                	.2byte	0xdd
+    801a:	0000                	.2byte	0x0
+    801c:	00000007          	.4byte	0x7
+    8020:	0028                	.2byte	0x28
+    8022:	0000                	.2byte	0x0
+    8024:	00dd                	.2byte	0xdd
+    8026:	0000                	.2byte	0x0
+    8028:	ffa6                	.2byte	0xffa6
+    802a:	ffff                	.2byte	0xffff
+    802c:	003d                	.2byte	0x3d
+    802e:	0000                	.2byte	0x0
+    8030:	fffffff7          	.4byte	0xfffffff7
+    8034:	0031                	.2byte	0x31
+    8036:	0000                	.2byte	0x0
+    8038:	ffb0                	.2byte	0xffb0
+    803a:	ffff                	.2byte	0xffff
+    803c:	ffb0                	.2byte	0xffb0
+    803e:	ffff                	.2byte	0xffff
+    8040:	00dd                	.2byte	0xdd
+    8042:	0000                	.2byte	0x0
+    8044:	fe85                	.2byte	0xfe85
+    8046:	ffff                	.2byte	0xffff
+    8048:	ff5f ffff fe73      	.byte	0x5f, 0xff, 0xff, 0xff, 0x73, 0xfe
+    804e:	ffff                	.2byte	0xffff
+    8050:	ffffff53          	.4byte	0xffffff53
+    8054:	0114                	.2byte	0x114
+    8056:	0000                	.2byte	0x0
+    8058:	ffffff3b          	.4byte	0xffffff3b
+    805c:	00dd                	.2byte	0xdd
+    805e:	0000                	.2byte	0x0
+    8060:	fff4                	.2byte	0xfff4
+    8062:	ffff                	.2byte	0xffff
+    8064:	ffffff6f          	jal	t5,8062 <begin_signature+0x62>
+    8068:	0065                	.2byte	0x65
+    806a:	0000                	.2byte	0x0
+
+0000806c <TEST1_SIZE>:
+    806c:	0000001b          	.4byte	0x1b
+
+00008070 <data_end>:
+    8070:	0000                	.2byte	0x0
+    8072:	0000                	.2byte	0x0
+    8074:	0000                	.2byte	0x0
+    8076:	0000                	.2byte	0x0
+    8078:	0000                	.2byte	0x0
+    807a:	0000                	.2byte	0x0
+    807c:	0000                	.2byte	0x0
+    807e:	0000                	.2byte	0x0

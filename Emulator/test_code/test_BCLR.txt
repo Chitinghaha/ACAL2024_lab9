@@ -1,0 +1,16 @@
+## RV32 Emulator Testing Assembly Code for BCLR function
+
+main:
+addi x5, x0, 10
+addi x6, x0, 1
+bclr x7, x5, x6
+
+addi x8, x0, 27
+addi x9, x0, 4
+bclr x10, x8, x9
+
+addi x11, x0, 32
+addi x12, x0, 4
+bclr x13, x11, x12
+
+hcf

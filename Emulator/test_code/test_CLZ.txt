@@ -1,0 +1,12 @@
+## RV32 Emulator Testing Assembly Code for CLZ function
+
+main:
+addi x27,x0 ,0
+addi x28,x0 ,1
+slli x28,x28, 31
+addi x29,x0 ,1
+slli x29,x29, 28
+clz x30,x27
+clz x31,x28
+clz x31,x29
+hcf

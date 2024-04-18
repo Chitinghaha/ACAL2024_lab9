@@ -1,0 +1,65 @@
+
+./out/obj/rv32ui_SingleTest-slt:     file format elf32-littleriscv
+./out/obj/rv32ui_SingleTest-slt
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+0x70000003 off    0x00002088 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x0000002e memsz 0x00000000 flags r--
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000038 memsz 0x00000038 flags r-x
+    LOAD off    0x00002000 vaddr 0x00008000 paddr 0x00008000 align 2**12
+         filesz 0x00000088 memsz 0x00000088 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000038  00000000  00000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000010  00008000  00008000  00002000  2**4
+                  CONTENTS, ALLOC, LOAD, DATA
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00008000 l    d  .data	00000000 .data
+00008000 l       .data	00000000 data_end
+00008000 g       .data	00000000 begin_signature
+
+
+Contents of section .text:
+ 0000 930000ff 13010001 13000000 13000000  ................
+ 0010 13000000 13000000 13000000 b3a12000  .............. .
+ 0020 13000000 13000000 13000000 13000000  ................
+ 0030 13000000 73000000                    ....s...        
+Contents of section .data:
+ 8000 00000000 00000000 00000000 00000000  ................
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   0:	ff000093          	li	ra,-16
+   4:	01000113          	li	sp,16
+   8:	00000013          	nop
+   c:	00000013          	nop
+  10:	00000013          	nop
+  14:	00000013          	nop
+  18:	00000013          	nop
+  1c:	0020a1b3          	slt	gp,ra,sp
+  20:	00000013          	nop
+  24:	00000013          	nop
+  28:	00000013          	nop
+  2c:	00000013          	nop
+  30:	00000013          	nop
+  34:	00000073          	ecall
+
+Disassembly of section .data:
+
+00008000 <begin_signature>:
+    8000:	0000                	.2byte	0x0
+    8002:	0000                	.2byte	0x0
+    8004:	0000                	.2byte	0x0
+    8006:	0000                	.2byte	0x0
+    8008:	0000                	.2byte	0x0
+    800a:	0000                	.2byte	0x0
+    800c:	0000                	.2byte	0x0
+    800e:	0000                	.2byte	0x0

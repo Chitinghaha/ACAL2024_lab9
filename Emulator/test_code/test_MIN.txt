@@ -1,0 +1,16 @@
+## RV32 Emulator Testing Assembly Code for MIN function
+
+main:
+li x12, 1
+li x20, 3
+min x28, x12, x20
+li x13, 1
+li x21, -3
+min x29, x13, x21
+li x14, -1
+li x22, 3
+min x30, x14, x22
+li x15, -1
+li x23, -3
+min x31, x15, x23
+hcf

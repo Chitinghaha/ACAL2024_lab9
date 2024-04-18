@@ -1,0 +1,160 @@
+
+./out/obj/rv32ui_FullTest-auipc:     file format elf32-littleriscv
+./out/obj/rv32ui_FullTest-auipc
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+0x70000003 off    0x00002088 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x0000002e memsz 0x00000000 flags r--
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x0000012c memsz 0x0000012c flags r-x
+    LOAD off    0x00002000 vaddr 0x00008000 paddr 0x00008000 align 2**12
+         filesz 0x00000088 memsz 0x00000088 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000012c  00000000  00000000  00001000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000010  00008000  00008000  00002000  2**4
+                  CONTENTS, ALLOC, LOAD, DATA
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00008000 l    d  .data	00000000 .data
+00000004 l       .text	00000000 reset_vector
+000000a0 l       .text	00000000 test_2
+000000e8 l       .text	00000000 fail
+000000c4 l       .text	00000000 test_3
+00000104 l       .text	00000000 pass
+00000114 l       .text	00000000 pass_fail_end
+00008000 l       .data	00000000 data_end
+00008000 g       .data	00000000 begin_signature
+00000000 g       .text	00000000 _start
+
+
+Contents of section .text:
+ 0000 6f004000 93000000 13010000 93010000  o.@.............
+ 0010 13020000 93020000 13030000 93030000  ................
+ 0020 13040000 93040000 13050000 93050000  ................
+ 0030 13060000 93060000 13070000 93070000  ................
+ 0040 13080000 93080000 13090000 93090000  ................
+ 0050 130a0000 930a0000 130b0000 930b0000  ................
+ 0060 130c0000 930c0000 130d0000 930d0000  ................
+ 0070 130e0000 930e0000 130f0000 930f0000  ................
+ 0080 93010000 13051000 1315f501 634a0500  ............cJ..
+ 0090 13000000 93011000 9308d005 13050000  ................
+ 00a0 93012000 13000000 17250000 1305c571  .. ......%.....q
+ 00b0 ef054000 3305b540 b7230000 93830371  ..@.3..@.#.....q
+ 00c0 63147502 93013000 17e5ffff 1305c58f  c.u...0.........
+ 00d0 ef054000 3305b540 b7e3ffff 9383038f  ..@.3..@........
+ 00e0 63147500 63103002 13000000 63800100  c.u.c.0.....c...
+ 00f0 13850100 93911100 93e11100 9308d005  ................
+ 0100 6f004001 13000000 93011000 9308d005  o.@.............
+ 0110 13050000 13000000 13000000 13000000  ................
+ 0120 13000000 13000000 73000000           ........s...    
+Contents of section .data:
+ 8000 00000000 00000000 00000000 00000000  ................
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	0040006f          	j	4 <reset_vector>
+
+00000004 <reset_vector>:
+   4:	00000093          	li	ra,0
+   8:	00000113          	li	sp,0
+   c:	00000193          	li	gp,0
+  10:	00000213          	li	tp,0
+  14:	00000293          	li	t0,0
+  18:	00000313          	li	t1,0
+  1c:	00000393          	li	t2,0
+  20:	00000413          	li	s0,0
+  24:	00000493          	li	s1,0
+  28:	00000513          	li	a0,0
+  2c:	00000593          	li	a1,0
+  30:	00000613          	li	a2,0
+  34:	00000693          	li	a3,0
+  38:	00000713          	li	a4,0
+  3c:	00000793          	li	a5,0
+  40:	00000813          	li	a6,0
+  44:	00000893          	li	a7,0
+  48:	00000913          	li	s2,0
+  4c:	00000993          	li	s3,0
+  50:	00000a13          	li	s4,0
+  54:	00000a93          	li	s5,0
+  58:	00000b13          	li	s6,0
+  5c:	00000b93          	li	s7,0
+  60:	00000c13          	li	s8,0
+  64:	00000c93          	li	s9,0
+  68:	00000d13          	li	s10,0
+  6c:	00000d93          	li	s11,0
+  70:	00000e13          	li	t3,0
+  74:	00000e93          	li	t4,0
+  78:	00000f13          	li	t5,0
+  7c:	00000f93          	li	t6,0
+  80:	00000193          	li	gp,0
+  84:	00100513          	li	a0,1
+  88:	01f51513          	slli	a0,a0,0x1f
+  8c:	00054a63          	bltz	a0,a0 <test_2>
+  90:	00000013          	nop
+  94:	00100193          	li	gp,1
+  98:	05d00893          	li	a7,93
+  9c:	00000513          	li	a0,0
+
+000000a0 <test_2>:
+  a0:	00200193          	li	gp,2
+  a4:	00000013          	nop
+  a8:	00002517          	auipc	a0,0x2
+  ac:	71c50513          	addi	a0,a0,1820 # 27c4 <pass_fail_end+0x26b0>
+  b0:	004005ef          	jal	a1,b4 <test_2+0x14>
+  b4:	40b50533          	sub	a0,a0,a1
+  b8:	000023b7          	lui	t2,0x2
+  bc:	71038393          	addi	t2,t2,1808 # 2710 <pass_fail_end+0x25fc>
+  c0:	02751463          	bne	a0,t2,e8 <fail>
+
+000000c4 <test_3>:
+  c4:	00300193          	li	gp,3
+  c8:	ffffe517          	auipc	a0,0xffffe
+  cc:	8fc50513          	addi	a0,a0,-1796 # ffffd9c4 <_end+0xffff593c>
+  d0:	004005ef          	jal	a1,d4 <test_3+0x10>
+  d4:	40b50533          	sub	a0,a0,a1
+  d8:	ffffe3b7          	lui	t2,0xffffe
+  dc:	8f038393          	addi	t2,t2,-1808 # ffffd8f0 <_end+0xffff5868>
+  e0:	00751463          	bne	a0,t2,e8 <fail>
+  e4:	02301063          	bne	zero,gp,104 <pass>
+
+000000e8 <fail>:
+  e8:	00000013          	nop
+  ec:	00018063          	beqz	gp,ec <fail+0x4>
+  f0:	00018513          	mv	a0,gp
+  f4:	00119193          	slli	gp,gp,0x1
+  f8:	0011e193          	ori	gp,gp,1
+  fc:	05d00893          	li	a7,93
+ 100:	0140006f          	j	114 <pass_fail_end>
+
+00000104 <pass>:
+ 104:	00000013          	nop
+ 108:	00100193          	li	gp,1
+ 10c:	05d00893          	li	a7,93
+ 110:	00000513          	li	a0,0
+
+00000114 <pass_fail_end>:
+ 114:	00000013          	nop
+ 118:	00000013          	nop
+ 11c:	00000013          	nop
+ 120:	00000013          	nop
+ 124:	00000013          	nop
+ 128:	00000073          	ecall
+
+Disassembly of section .data:
+
+00008000 <begin_signature>:
+    8000:	0000                	.2byte	0x0
+    8002:	0000                	.2byte	0x0
+    8004:	0000                	.2byte	0x0
+    8006:	0000                	.2byte	0x0
+    8008:	0000                	.2byte	0x0
+    800a:	0000                	.2byte	0x0
+    800c:	0000                	.2byte	0x0
+    800e:	0000                	.2byte	0x0

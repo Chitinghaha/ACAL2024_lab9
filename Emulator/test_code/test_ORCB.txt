@@ -1,0 +1,10 @@
+## RV32 Emulator Testing Assembly Code for ORCB function
+
+main:
+li x26, 0x00100100
+orc.b x27, x26
+li x28, 0x10000001
+orc.b x29, x28
+li x30, 0x1A2B3C4D
+orc.b x31, x30
+hcf

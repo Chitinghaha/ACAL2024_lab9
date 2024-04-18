@@ -1,0 +1,10 @@
+## RV32 Emulator Testing Assembly Code for BINVI function
+
+main:
+addi x5, x0, 10
+binvi x6, x5, 1
+
+addi x7, x0, 27
+binvi x8, x7, 2
+
+hcf

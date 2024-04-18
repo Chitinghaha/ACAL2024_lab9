@@ -1,0 +1,11 @@
+## RV32 Emulator Testing Assembly Code for RORI function
+main:
+addi x2, x0, 0x7F 
+sext.b x1, x2     
+                 
+
+addi x3, x0, 0xFF 
+sext.b x4, x3     
+                  
+
+hcf              

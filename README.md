@@ -22,7 +22,7 @@
   | 20  | bexti rd, rs1, imm  |kyle10070kk|
   | 21  | ror rd, rs1, rs2    |kyle10070kk|
   | 22  | rol rd, rs1, rs2    |kyle10070kk|
-  | 23  | rori rd, rs1, imm   |kyle10070kk|
+  | 23  | rori rd, rs1, imm   |Jim0628|
   | 24  | sh1add rd, rs1, rs2 |Jim0628|
   | 25  | sh2add rd, rs1, rs2 |Jim0628|
   | 26  | sh3add rd, rs1, rs2 |Jim0628|

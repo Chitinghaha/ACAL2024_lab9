@@ -1,0 +1,12 @@
+x1 = 29
+x2 = 32
+x3 = 2
+x4 = 32
+x5 = 7
+x6 = 11
+x7 = 0xffff_fffb
+x8 = 0xffff_fff4
+x9 = 0
+x10 = 0xffff_fff8
+x11 = 4
+x12 = 1

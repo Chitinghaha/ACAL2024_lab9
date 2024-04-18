@@ -68,7 +68,7 @@ instr_type parse_instr(char* tok) {
 	if ( streq(tok , "maxu")) return MAXU;
 	if ( streq(tok , "min")) return MIN;
 	if ( streq(tok , "minu")) return MINU;
-	if ( streq(tok , "orc_b")) return ORC_B;
+	if ( streq(tok , "orc.b")) return ORC_B;
 	if ( streq(tok , "orn")) return ORN;
 	if ( streq(tok , "rev8")) return REV8;
 	if ( streq(tok , "rol")) return ROL;
@@ -84,13 +84,13 @@ instr_type parse_instr(char* tok) {
 	if ( streq(tok , "bset")) return BSET;
 
 	if (streq(tok, "bseti")) return BSETI;
-	if (streq(tok, "sext_b")) return SEXT_B;
-	if (streq(tok, "sext_h")) return SEXT_H;
+	if (streq(tok, "sext.b")) return SEXT_B;
+	if (streq(tok, "sext.h")) return SEXT_H;
 	if (streq(tok, "sh1add")) return SH1ADD;
 	if (streq(tok, "sh2add")) return SH2ADD;
 	if (streq(tok, "sh3add")) return SH3ADD;
 	if (streq(tok, "xnor")) return XNOR;
-	if (streq(tok, "zext_h")) return ZEXT_H;
+	if (streq(tok, "zext.h")) return ZEXT_H;
 
     //*****************
 

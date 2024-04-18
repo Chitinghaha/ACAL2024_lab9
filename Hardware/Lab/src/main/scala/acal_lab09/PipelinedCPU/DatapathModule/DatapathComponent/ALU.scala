@@ -72,6 +72,7 @@ class ALU extends Module{
     is(XNOR){io.out := ~(io.src1 ^ io.src2)}
     is(MIN){io.out := Mux(io.src1.asSInt < io.src2.asSInt, io.src1, io.src2)}
     is(MAX){io.out := Mux(io.src1.asSInt > io.src2.asSInt, io.src1, io.src2)}
+    is(MINU){io.out := Mux(io.src1 < io.src2, io.src1, io.src2)}
     is(MAXU){io.out := Mux(io.src1 > io.src2, io.src1, io.src2)}
     is(SEXT_B){
       sext_b_helper := io.src1(7,0).asSInt

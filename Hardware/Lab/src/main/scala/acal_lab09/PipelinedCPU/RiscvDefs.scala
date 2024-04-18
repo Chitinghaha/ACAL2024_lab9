@@ -53,6 +53,7 @@ object alu_op_map {
   val XNOR = "b0100000_11111_100".U
   val MIN = "b0000101_11111_100".U
   val MAX = "b0000101_11111_110".U
+  val MINU = "b0000101_11111_101".U
   val MAXU = "b0000101_11111_111".U
   val BSET = "b0010100_11111_001".U
   val BCLR = "b0100100_11111_001".U

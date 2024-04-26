@@ -1,4 +1,4 @@
-# Instruction MINU, MAXU, sext_b, sext_h, bset, bclr, binv
+# Instruction MINU, MAXU, SEXT_B, SEXT_H, BSET, BCLR, BINV
 
 li x20, -3
 li x21, 1

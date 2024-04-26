@@ -227,8 +227,8 @@ void translate_to_machine_code(uint8_t* mem,instr* imem, char* argv1){
 				binary += i.a1.reg << 7;     	   //rd
 				binary += 0b001 << 12;      	   //funct3
 				binary += i.a2.reg << 15;   	   //rs1
-				binary += (i.a3.imm & 0x3F) << 20; // shamt(6bits)
-				binary += 0b001010 << 26;
+				binary += (i.a3.imm & 0x1F) << 20; // shamt(5bits for RV32)
+				binary += 0b0010100 << 25;
 			break;
 
 			case BCLRI:
@@ -236,8 +236,8 @@ void translate_to_machine_code(uint8_t* mem,instr* imem, char* argv1){
 				binary += i.a1.reg << 7;     	   //rd
 				binary += 0b001 << 12;      	   //funct3
 				binary += i.a2.reg << 15;   	   //rs1
-				binary += (i.a3.imm & 0x3F) << 20; // shamt(6bits)
-				binary += 0b010010 << 26;
+				binary += (i.a3.imm & 0x1F) << 20; // shamt(5bits for RV32)
+				binary += 0b0100100 << 25;
 			break;
 
 			case BINVI:
@@ -245,8 +245,8 @@ void translate_to_machine_code(uint8_t* mem,instr* imem, char* argv1){
 				binary += i.a1.reg << 7;     	   //rd
 				binary += 0b001 << 12;      	   //funct3
 				binary += i.a2.reg << 15;   	   //rs1
-				binary += (i.a3.imm & 0x3F) << 20; // shamt(6bits)
-				binary += 0b011010 << 26;
+				binary += (i.a3.imm & 0x1F) << 20; // shamt(5bits for RV32)
+				binary += 0b0110100 << 25;
 			break;
 
 			case BEXTI:
@@ -254,8 +254,8 @@ void translate_to_machine_code(uint8_t* mem,instr* imem, char* argv1){
 				binary += i.a1.reg << 7;     	   //rd
 				binary += 0b101 << 12;      	   //funct3
 				binary += i.a2.reg << 15;   	   //rs1
-				binary += (i.a3.imm & 0x3F) << 20; // shamt(6bits)
-				binary += 0b010010 << 26;
+				binary += (i.a3.imm & 0x1F) << 20; // shamt(5bits for RV32)
+				binary += 0b0100100 << 25;
 			break;
 
 			case ROR:

@@ -258,22 +258,22 @@ class Controller(memAddrWidth: Int) extends Module {
 
   // check data dependency between ID & EXE & MEM & WB
   when(EXE_use_rd){
-    en_AFor_EXE := ID_rs1 === EXE_rd
-    en_BFor_EXE := ID_rs2 === EXE_rd
+    en_AFor_EXE := ID_rs1 === EXE_rd && EXE_rd =/= 0.U
+    en_BFor_EXE := ID_rs2 === EXE_rd && EXE_rd =/= 0.U
   }.otherwise{
     en_AFor_EXE := false.B
     en_BFor_EXE := false.B
   }
   when(MEM_use_rd){
-    en_AFor_MEM := ID_rs1 === MEM_rd
-    en_BFor_MEM := ID_rs2 === MEM_rd
+    en_AFor_MEM := ID_rs1 === MEM_rd && MEM_rd =/= 0.U
+    en_BFor_MEM := ID_rs2 === MEM_rd && MEM_rd =/= 0.U
   }.otherwise{
     en_AFor_MEM := false.B
     en_BFor_MEM := false.B
   }
   when(WB_use_rd){
-    en_AFor_WB := ID_rs1 === WB_rd
-    en_BFor_WB := ID_rs2 === WB_rd
+    en_AFor_WB := ID_rs1 === WB_rd && WB_rd =/= 0.U
+    en_BFor_WB := ID_rs2 === WB_rd && WB_rd =/= 0.U
   }.otherwise{
     en_AFor_WB := false.B
     en_BFor_WB := false.B
